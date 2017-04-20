@@ -120,6 +120,32 @@ class RestAPI: NSObject {
 
         return Observable<Upcoming>.create { observer in
 
+            var request = URLRequest(url: URL(string: "https://api.themoviedb.org/3/search/movie?api_key=\(apiKey)&language=\(language)&page=\(page)&query=\(query)")!,
+                                     cachePolicy: .useProtocolCachePolicy,
+                                     timeoutInterval: 10.0)
+            request.httpMethod = "GET"
+
+            let session = URLSession.shared
+            let dataTask = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
+                if (error != nil) {
+                    print(error ?? "error")
+                    observer.onError(error!)
+                } else {
+
+                    let mapper = Mapper<Upcoming>()
+
+                    guard let upcoming = mapper.map(JSONString: String(data: data!, encoding: .utf8)!) else {
+                        observer.onError(NSError(domain: "", code: 1, userInfo: nil))
+                        return
+                    }
+
+                    observer.onNext(upcoming)
+                    observer.onCompleted()
+                }
+            })
+            
+            dataTask.resume()
+            
             return Disposables.create()
         }
     }

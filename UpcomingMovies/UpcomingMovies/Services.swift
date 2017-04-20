@@ -33,7 +33,7 @@ class Services {
         }
     }
 
-    class func loadMovies(page: Int = 1) -> Observable<Upcoming> {
+    class func loadMovies(page: Int) -> Observable<Upcoming> {
         return RestAPI.loadMovies(page: page, language: Utils.getLanguage())
     }
 
@@ -41,7 +41,7 @@ class Services {
         return RestAPI.loadMovieDetails(movieId, language: Utils.getLanguage())
     }
 
-    class func searchMovies(page: Int = 1, query: String) -> Observable<Upcoming> {
+    class func searchMovies(page: Int, query: String) -> Observable<Upcoming> {
         return RestAPI.searchMovies(page: page, query: query, language: Utils.getLanguage())
     }
 }

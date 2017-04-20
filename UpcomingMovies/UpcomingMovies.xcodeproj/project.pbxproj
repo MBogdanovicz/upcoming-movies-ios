@@ -29,9 +29,9 @@
 		47ABEF993FE6181D470B674D /* Pods-UpcomingMovies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpcomingMovies.release.xcconfig"; path = "Pods/Target Support Files/Pods-UpcomingMovies/Pods-UpcomingMovies.release.xcconfig"; sourceTree = "<group>"; };
 		6B758C9F434B736C2E076BA1 /* Pods-UpcomingMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UpcomingMovies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UpcomingMovies/Pods-UpcomingMovies.debug.xcconfig"; sourceTree = "<group>"; };
 		9376DABDB77166EE65DFF6A6 /* Pods_UpcomingMovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UpcomingMovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE3FFCEB1EA8695C005AAD42 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = Localizable/Portuguese_BR/pt.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BE3FFCEB1EA8695C005AAD42 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BE3FFCED1EA873E2005AAD42 /* Genres.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
-		BE444F6D1EA8672C00B7F7E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable/English_US/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BE444F6D1EA8672C00B7F7E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BEC7B51C1EA834F500EEFDCB /* MovieDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailTableViewController.swift; sourceTree = "<group>"; };
 		BEC7B51E1EA8380700EEFDCB /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		BEC7B5201EA83B7000EEFDCB /* Genre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
@@ -72,17 +72,20 @@
 			isa = PBXGroup;
 			children = (
 				BE3FFCE71EA86910005AAD42 /* Localizable */,
+				BEF98C2F1EA7BAC1007C411A /* Assets.xcassets */,
 			);
 			name = Resource;
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		BE3FFCE71EA86910005AAD42 /* Localizable */ = {
 			isa = PBXGroup;
 			children = (
-				BE3FFCE91EA86922005AAD42 /* Portuguese_BR */,
 				BE3FFCE81EA8691A005AAD42 /* English_US */,
+				BE3FFCE91EA86922005AAD42 /* Portuguese_BR */,
 			);
 			name = Localizable;
+			path = Localizable;
 			sourceTree = "<group>";
 		};
 		BE3FFCE81EA8691A005AAD42 /* English_US */ = {
@@ -91,6 +94,7 @@
 				BE444F6C1EA8672C00B7F7E5 /* Localizable.strings */,
 			);
 			name = English_US;
+			path = English_US;
 			sourceTree = "<group>";
 		};
 		BE3FFCE91EA86922005AAD42 /* Portuguese_BR */ = {
@@ -99,15 +103,76 @@
 				BE3FFCEA1EA8695C005AAD42 /* Localizable.strings */,
 			);
 			name = Portuguese_BR;
+			path = Portuguese_BR;
+			sourceTree = "<group>";
+		};
+		BE3FFCEF1EA8FC1E005AAD42 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BEC7B51C1EA834F500EEFDCB /* MovieDetailTableViewController.swift */,
+				BEF98C3A1EA7BF7C007C411A /* MoviesListTableViewController.swift */,
+			);
+			name = Controller;
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BE3FFCF01EA8FC3E005AAD42 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BEC7B5201EA83B7000EEFDCB /* Genre.swift */,
+				BE3FFCED1EA873E2005AAD42 /* Genres.swift */,
+				BEC7B51E1EA8380700EEFDCB /* Movie.swift */,
+				BEC7B5221EA83BBD00EEFDCB /* Upcoming.swift */,
+			);
+			name = Model;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE3FFCF11EA8FC59005AAD42 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				BEF98C281EA7BAC1007C411A /* AppDelegate.swift */,
+			);
+			name = Application;
+			path = Application;
+			sourceTree = "<group>";
+		};
+		BE3FFCF21EA8FC6F005AAD42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BEF98C311EA7BAC1007C411A /* LaunchScreen.storyboard */,
+				BEF98C2C1EA7BAC1007C411A /* Main.storyboard */,
+			);
+			name = View;
+			path = View;
+			sourceTree = "<group>";
+		};
+		BE3FFCF31EA8FC8B005AAD42 /* RestAPI */ = {
+			isa = PBXGroup;
+			children = (
+				BEC7B5261EA83E6E00EEFDCB /* RestAPI.swift */,
+			);
+			name = RestAPI;
+			path = RestAPI;
+			sourceTree = "<group>";
+		};
+		BE3FFCF41EA8FC96005AAD42 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				BEC7B5241EA83D6C00EEFDCB /* Services.swift */,
+				BEC7B5281EA83F1600EEFDCB /* Utils.swift */,
+			);
+			name = Business;
+			path = Business;
 			sourceTree = "<group>";
 		};
 		BEF98C1C1EA7BAC0007C411A = {
 			isa = PBXGroup;
 			children = (
-				BEF98C271EA7BAC1007C411A /* UpcomingMovies */,
-				BEF98C261EA7BAC1007C411A /* Products */,
-				E4880BF4206BE460F770BD8E /* Pods */,
 				5BF3857B72225537B787AFF6 /* Frameworks */,
+				E4880BF4206BE460F770BD8E /* Pods */,
+				BEF98C261EA7BAC1007C411A /* Products */,
+				BEF98C271EA7BAC1007C411A /* UpcomingMovies */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,21 +187,14 @@
 		BEF98C271EA7BAC1007C411A /* UpcomingMovies */ = {
 			isa = PBXGroup;
 			children = (
+				BE3FFCF11EA8FC59005AAD42 /* Application */,
+				BE3FFCF41EA8FC96005AAD42 /* Business */,
+				BE3FFCEF1EA8FC1E005AAD42 /* Controller */,
+				BE3FFCF01EA8FC3E005AAD42 /* Model */,
 				BE3FFCE61EA868FF005AAD42 /* Resource */,
-				BEF98C281EA7BAC1007C411A /* AppDelegate.swift */,
-				BEF98C2C1EA7BAC1007C411A /* Main.storyboard */,
-				BEF98C2F1EA7BAC1007C411A /* Assets.xcassets */,
-				BEF98C311EA7BAC1007C411A /* LaunchScreen.storyboard */,
+				BE3FFCF31EA8FC8B005AAD42 /* RestAPI */,
+				BE3FFCF21EA8FC6F005AAD42 /* View */,
 				BEF98C341EA7BAC1007C411A /* Info.plist */,
-				BEF98C3A1EA7BF7C007C411A /* MoviesListTableViewController.swift */,
-				BEC7B51C1EA834F500EEFDCB /* MovieDetailTableViewController.swift */,
-				BEC7B51E1EA8380700EEFDCB /* Movie.swift */,
-				BEC7B5201EA83B7000EEFDCB /* Genre.swift */,
-				BEC7B5221EA83BBD00EEFDCB /* Upcoming.swift */,
-				BEC7B5241EA83D6C00EEFDCB /* Services.swift */,
-				BEC7B5261EA83E6E00EEFDCB /* RestAPI.swift */,
-				BEC7B5281EA83F1600EEFDCB /* Utils.swift */,
-				BE3FFCED1EA873E2005AAD42 /* Genres.swift */,
 			);
 			path = UpcomingMovies;
 			sourceTree = "<group>";
@@ -251,7 +309,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FFD41742D1C1F77F8C22AA97 /* [CP] Embed Pods Frameworks */ = {
@@ -298,6 +356,7 @@
 				BE3FFCEB1EA8695C005AAD42 /* pt */,
 			);
 			name = Localizable.strings;
+			path = .;
 			sourceTree = "<group>";
 		};
 		BE444F6C1EA8672C00B7F7E5 /* Localizable.strings */ = {
@@ -306,6 +365,7 @@
 				BE444F6D1EA8672C00B7F7E5 /* en */,
 			);
 			name = Localizable.strings;
+			path = .;
 			sourceTree = "<group>";
 		};
 		BEF98C2C1EA7BAC1007C411A /* Main.storyboard */ = {
@@ -314,6 +374,7 @@
 				BEF98C2D1EA7BAC1007C411A /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		BEF98C311EA7BAC1007C411A /* LaunchScreen.storyboard */ = {
@@ -322,6 +383,7 @@
 				BEF98C321EA7BAC1007C411A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

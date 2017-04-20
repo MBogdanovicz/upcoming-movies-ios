@@ -9,11 +9,11 @@ PODS:
   - SDWebImage/Core (4.0.0)
 
 DEPENDENCIES:
-  - AwesomeCache
-  - ObjectMapper
-  - RxCocoa
-  - RxSwift
-  - SDWebImage
+  - AwesomeCache (~> 5.0)
+  - ObjectMapper (~> 2.2)
+  - RxCocoa (~> 3.4)
+  - RxSwift (~> 3.4)
+  - SDWebImage (~> 4.0)
 
 SPEC CHECKSUMS:
   AwesomeCache: d8906955242173357caa0be0214d5e77dec32cc5
@@ -22,6 +22,6 @@ SPEC CHECKSUMS:
   RxSwift: 3789a1af753002a14edecdb698a2424624296a9c
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-PODFILE CHECKSUM: 7c2bc40d14ab51ea857b163133a09943f8f8b922
+PODFILE CHECKSUM: 73b8ad0a63498c05060d04222f1feb8ab3884dc8
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1

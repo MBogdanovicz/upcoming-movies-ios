@@ -74,7 +74,6 @@
 				BE3FFCE71EA86910005AAD42 /* Localizable */,
 				BEF98C2F1EA7BAC1007C411A /* Assets.xcassets */,
 			);
-			name = Resource;
 			path = Resource;
 			sourceTree = "<group>";
 		};
@@ -84,7 +83,6 @@
 				BE3FFCE81EA8691A005AAD42 /* English_US */,
 				BE3FFCE91EA86922005AAD42 /* Portuguese_BR */,
 			);
-			name = Localizable;
 			path = Localizable;
 			sourceTree = "<group>";
 		};
@@ -93,7 +91,6 @@
 			children = (
 				BE444F6C1EA8672C00B7F7E5 /* Localizable.strings */,
 			);
-			name = English_US;
 			path = English_US;
 			sourceTree = "<group>";
 		};
@@ -102,7 +99,6 @@
 			children = (
 				BE3FFCEA1EA8695C005AAD42 /* Localizable.strings */,
 			);
-			name = Portuguese_BR;
 			path = Portuguese_BR;
 			sourceTree = "<group>";
 		};
@@ -112,7 +108,6 @@
 				BEC7B51C1EA834F500EEFDCB /* MovieDetailTableViewController.swift */,
 				BEF98C3A1EA7BF7C007C411A /* MoviesListTableViewController.swift */,
 			);
-			name = Controller;
 			path = Controller;
 			sourceTree = "<group>";
 		};
@@ -124,7 +119,6 @@
 				BEC7B51E1EA8380700EEFDCB /* Movie.swift */,
 				BEC7B5221EA83BBD00EEFDCB /* Upcoming.swift */,
 			);
-			name = Model;
 			path = Model;
 			sourceTree = "<group>";
 		};
@@ -133,7 +127,6 @@
 			children = (
 				BEF98C281EA7BAC1007C411A /* AppDelegate.swift */,
 			);
-			name = Application;
 			path = Application;
 			sourceTree = "<group>";
 		};
@@ -143,7 +136,6 @@
 				BEF98C311EA7BAC1007C411A /* LaunchScreen.storyboard */,
 				BEF98C2C1EA7BAC1007C411A /* Main.storyboard */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -152,7 +144,6 @@
 			children = (
 				BEC7B5261EA83E6E00EEFDCB /* RestAPI.swift */,
 			);
-			name = RestAPI;
 			path = RestAPI;
 			sourceTree = "<group>";
 		};
@@ -162,7 +153,6 @@
 				BEC7B5241EA83D6C00EEFDCB /* Services.swift */,
 				BEC7B5281EA83F1600EEFDCB /* Utils.swift */,
 			);
-			name = Business;
 			path = Business;
 			sourceTree = "<group>";
 		};
@@ -393,6 +383,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -444,6 +435,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

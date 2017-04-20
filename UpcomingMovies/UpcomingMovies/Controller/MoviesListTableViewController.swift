@@ -166,7 +166,10 @@ class MoviesListTableViewController: UITableViewController, UISearchResultsUpdat
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "MovieDetailsSegue", sender: getCurrentList()[indexPath.row])
+        let movie = getCurrentList()[indexPath.row]
+
+        deactivateSearch()
+        performSegue(withIdentifier: "MovieDetailsSegue", sender: movie)
     }
 
     // MARK: - Navigation
@@ -185,6 +188,15 @@ class MoviesListTableViewController: UITableViewController, UISearchResultsUpdat
     }
 
     public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        deactivateSearch()
+    }
+
+    private func deactivateSearch() {
+        searchController.isActive = false
+
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(loadMovies), for: .valueChanged)
+
         tableView.contentOffset = CGPoint(x: 0, y: tableView.tableHeaderView?.frame.height ?? 0)
         tableView.reloadData()
     }

@@ -23,8 +23,20 @@ class Utils {
     class func saveRequestCache<T>(object: T, cacheKey: String) where T:BaseMappable {
         let mapper = Mapper<T>()
         let strJSON = mapper.toJSONString(object)! as NSString
+
+        setCacheObject(strJSON: strJSON, cacheKey: cacheKey)
+    }
+
+    class func saveRequestCache<T>(object: [T], cacheKey: String) where T:BaseMappable {
+        let mapper = Mapper<T>()
+        let strJSON = mapper.toJSONString(object)!
+
+        Utils.setCacheObject(strJSON: strJSON as NSString, cacheKey: cacheKey)
+    }
+
+    private class func setCacheObject(strJSON: NSString, cacheKey: String) {
         if let cache = getRequestCache() {
-            cache.setObject(strJSON as NSString, forKey: cacheKey, expires: .seconds(Constants.requestsCacheTTL))
+            cache.setObject(strJSON, forKey: cacheKey, expires: .seconds(Constants.requestsCacheTTL))
         }
     }
 
@@ -41,11 +53,41 @@ class Utils {
 
         return formatter.string(from: date)
     }
+
+    class func getPosterUrl(posterPath: String) -> URL? {
+        return URL(string: Constants.posterBaseUrl + posterPath)
+    }
+
+    class func getGenres(genreIds: [Int]) -> [String] {
+        var genresStr = [String]()
+
+        for id in genreIds {
+            for genre in Constants.genres {
+                if genre.id == id {
+                    genresStr.append(genre.name)
+                    break
+                }
+            }
+        }
+
+        return genresStr
+    }
+
+    class func getGenres(genres: [Genre]) -> [String] {
+        var genreStr = [String]()
+
+        for genre in genres {
+            genreStr.append(genre.name)
+        }
+
+        return genreStr
+    }
 }
 
 class Constants {
 
-    static var genres: [Genre]!
+    static var genres = [Genre]()
     static let genresCacheKey = "GENRES_CACHE_KEY"
     static let requestsCacheTTL: TimeInterval = 60 * 60 * 24 * 5 //5 days
+    static let posterBaseUrl = "http://image.tmdb.org/t/p/w185"
 }

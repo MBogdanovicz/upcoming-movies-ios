@@ -18,17 +18,17 @@ class Services {
         if let cache = Utils.getRequestCache(),
             let data = cache.object(forKey: Constants.genresCacheKey) {
 
-            let mapper = Mapper<[Genre]>()
-            let genres = mapper.map(JSONString: data as String)!
+            let mapper = Mapper<Genre>()
+            let genres = mapper.mapArray(JSONString: data as String)!
 
             Constants.genres = genres
 
             return Observable.empty()
         } else {
-            return RestAPI.getAllGenres(language: Utils.getLanguage()).map({ observer -> Void in
+            return RestAPI.getAllGenres(language: Utils.getLanguage()).map({ genres -> Void in
 
-                Utils.saveRequestCache(object: observer, key: Constants.genresCacheKey)
-                Constants.genres = observer
+                Utils.saveRequestCache(object: genres, cacheKey: Constants.genresCacheKey)
+                Constants.genres = genres
             })
         }
     }
@@ -38,7 +38,7 @@ class Services {
     }
 
     class func loadMovieDetails(_ movieId: Int) -> Observable<Movie> {
-        return RestAPI.loadMovieDetails(movieId)
+        return RestAPI.loadMovieDetails(movieId, language: Utils.getLanguage())
     }
 
     class func searchMovies(page: Int = 1, query: String) -> Observable<Upcoming> {

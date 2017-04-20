@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import SDWebImage
 
 class MovieDetailTableViewController: UITableViewController {
 
@@ -19,11 +20,14 @@ class MovieDetailTableViewController: UITableViewController {
     @IBOutlet weak var lblOverview: UILabel!
 
     var movie: Movie!
+    private var bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
+        setValues()
+        loadMovieDetails()
     }
 
     private func setupUI() {
@@ -31,6 +35,34 @@ class MovieDetailTableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
         tableView.reloadData()
+    }
+
+    private func setValues() {
+        if let url = movie.posterUrl {
+            ivPoster.sd_setImage(with: url)
+        } else {
+            ivPoster.image = nil
+        }
+
+        lblTitle.text = movie.title
+        lblReleaseDate.text = Utils.formatDate(movie.releaseDate)
+        lblGenresTitle.text = NSLocalizedString("genres", comment: "")
+
+        if movie.genres != nil {
+            lblGenres.text = Utils.getGenres(genres: movie.genres).joined(separator: ", ")
+        }
+
+        lblOverview.text = movie.overview
+    }
+
+    private func loadMovieDetails() {
+        _ = Services.loadMovieDetails(movie.id).observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { movie in
+                    self.movie = movie
+                    self.setValues()
+
+            }).addDisposableTo(bag)
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

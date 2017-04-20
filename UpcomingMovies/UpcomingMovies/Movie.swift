@@ -12,6 +12,7 @@ import ObjectMapper
 class Movie: Mappable {
 
     var posterPath: String!
+    var posterUrl: URL?
     var overview: String!
     var releaseDate: String!
     var id: Int!
@@ -33,5 +34,7 @@ class Movie: Mappable {
         title <- map["title"]
         genreIds <- map["genre_ids"]
         genres <- map["genres"]
+
+        posterUrl = Utils.getPosterUrl(posterPath: posterPath)
     }
 }
